@@ -5,7 +5,7 @@
             <wwObject v-bind:ww-object="section.data.title"></wwObject>
         </div>
 
-        <div>
+        <div class="content-container">
             <div class="leftMargin"></div>
             <div class="logo-container small">
                 <div>
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="full-width">
                 <div ww-object="data.marginBottom"></div>
                 <wwObject v-bind:ww-object="section.data.marginBottom"></wwObject>
             </div>
@@ -144,7 +144,7 @@ export default {
     },
     methods: {
         init: function () {
-
+            console.log(this.section.data.block)
             this.sectionId = this.section.id
             this.section.data.block = this.section.data.block || []
 
@@ -207,6 +207,7 @@ export default {
             this.setTimer()
         },
         selectIdx: async function (idx) {
+            console.log('selectIdx')
             $interval.cancel(this.interval);
             await this.changeData(idx)
             this.setTimer()
@@ -239,11 +240,11 @@ export default {
 </script>
 
 <style scoped>
-.logoAndCard_A {
+.logoandcard_A {
   position: relative;
 }
 
-.logoAndCard_A .background {
+.logoandcard_A .background {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -251,51 +252,67 @@ export default {
   left: 0;
 }
 
-.logoAndCard_A .contents {
+.logoandcard_A .content-container {
+  display: flex;
+}
+
+.logoandcard_A .f-container {
+  display: flex;
+}
+
+.logoandcard_A .f-container .full-width {
+  flex-basis: 100%;
+}
+
+.logoandcard_A .left-margin {
+  flex-basis: 0.08333333%;
+}
+
+.logoandcard_A .contents {
   position: relative;
   width: 100%;
 }
 
-.logoAndCard_A .top-padding-edit {
+.logoandcard_A .top-padding-edit {
   height: 50px;
   width: 100%;
 }
 
-.logoAndCard_A .ww-add-block-container {
+.logoandcard_A .ww-add-block-container {
   position: relative;
   text-align: center;
   padding: 15px;
 }
 
-.logoAndCard_A .ww-add-block {
+.logoandcard_A .ww-add-block {
   position: relative;
   height: 70px;
   width: 70px;
   display: inline-block;
 }
 
-.logoAndCard_A .row-container {
+.logoandcard_A .row-container {
   width: 100%;
   position: relative;
 }
 
-.logoAndCard_A .row-container.editing {
+.logoandcard_A .row-container.editing {
   padding-left: 100px;
 }
 
-.logoAndCard_A .row-container > .edit-button-top-left {
+.logoandcard_A .row-container > .edit-button-top-left {
   top: 2px;
   left: 2px;
 }
 
-.logoAndCard_A .img-corner {
+.logoandcard_A .img-corner {
   position: absolute;
   right: 10px;
   bottom: 5px;
   width: 20%;
 }
 
-.logoAndCard_A .logo-container {
+.logoandcard_A .logo-container {
   display: block;
   position: relative;
   float: left;
@@ -305,23 +322,23 @@ export default {
   padding-left: 15px;
 }
 
-.logoAndCard_A .cursor-pointer {
+.logoandcard_A .cursor-pointer {
   cursor: pointer;
 }
 
-.logoAndCard_A .small.logo-container {
+.logoandcard_A .small.logo-container {
   width: 8%;
 }
 
-.logoAndCard_A .medium.logo-container {
+.logoandcard_A .medium.logo-container {
   width: 8.5%;
 }
 
-.logoAndCard_A .large.logo-container {
+.logoandcard_A .large.logo-container {
   width: 9%;
 }
 
-.logoAndCard_A .logo-container .logo {
+.logoandcard_A .logo-container .logo {
   transition: 1s;
   cursor: pointer;
   opacity: 0.5;
@@ -330,14 +347,14 @@ export default {
   margin-bottom: 10px;
 }
 
-.logoAndCard_A .logo-container .active,
-.logoAndCard_A .logo:hover {
+.logoandcard_A .logo-container .active,
+.logoandcard_A .logo:hover {
   transform: translateY(-5px);
   transition: 1s;
   opacity: 1;
 }
 
-.logoAndCard_A .container-block {
+.logoandcard_A .container-block {
   position: relative;
   display: block;
   float: left;
@@ -347,27 +364,27 @@ export default {
   width: 45%;
 }
 
-.logoAndCard_A .leftMargin {
+.logoandcard_A .leftMargin {
   width: 2%;
   padding: unset;
   float: left;
 }
 
-.logoAndCard_A .logo-block {
+.logoandcard_A .logo-block {
   position: relative;
 }
 
-.logoAndCard_A .card {
+.logoandcard_A .card {
   height: 350px;
 }
 
-.logoAndCard_A .al-container {
+.logoandcard_A .al-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logoAndCard_A .al-content {
+.logoandcard_A .al-content {
   width: 85%;
   display: flex;
   justify-content: space-between;
@@ -375,56 +392,56 @@ export default {
   flex-wrap: wrap;
 }
 
-.logoAndCard_A .al-portrait {
+.logoandcard_A .al-portrait {
   float: left;
   width: 15%;
   height: 15%;
 }
 
-.logoAndCard_A .al-text {
+.logoandcard_A .al-text {
   width: 60%;
   position: relative;
 }
 
-.logoAndCard_A .al-btn {
+.logoandcard_A .al-btn {
   position: relative;
 }
 
-.logoAndCard_A .al-btn2 {
+.logoandcard_A .al-btn2 {
   display: none;
 }
 
 @media (max-width: 1200px) {
-  .logoAndCard_A .img-corner {
+  .logoandcard_A .img-corner {
     width: 30%;
   }
 }
 
 @media (max-width: 992px) {
-  .logoAndCard_A .logo-container {
+  .logoandcard_A .logo-container {
     display: none;
   }
 
-  .logoAndCard_A .container-block {
+  .logoandcard_A .container-block {
     width: 96%;
   }
 
-  .logoAndCard_A .img-corner {
+  .logoandcard_A .img-corner {
     width: 15%;
   }
 }
 
 @media (max-width: 769px) {
-  .logoAndCard_A .img-corner {
+  .logoandcard_A .img-corner {
     width: 20%;
   }
-  .logoAndCard_A .al-text {
+  .logoandcard_A .al-text {
     width: 80%;
   }
-  .logoAndCard_A .al-btn {
+  .logoandcard_A .al-btn {
     display: none;
   }
-  .logoAndCard_A .al-btn2 {
+  .logoandcard_A .al-btn2 {
     width: 100%;
     text-align: center;
     margin: auto;
@@ -433,12 +450,12 @@ export default {
 }
 
 @media (max-width: 555px) {
-  .logoAndCard_A .img-corner {
+  .logoandcard_A .img-corner {
     width: 30%;
   }
 }
 
-.logoAndCard_A .anim-ease-in-out {
+.logoandcard_A .anim-ease-in-out {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -ms-transition: all 0.5s ease-in-out;
