@@ -9,119 +9,120 @@
             <div class="leftMargin"></div>
             <div class="logo-container small">
                 <div>
-                    <div v-if="section.data.block[4]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[4].logo" v-on:click="selectIdx(4)" v-bind:class="{ active: idx === 4 }"></wwObject>
+                    <div v-if="section.data.block[4]" class="logo-block" v-on:click="selectIdx(4)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[4].logo" v-bind:class="{ active: idx === 4 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[10]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[10].logo" v-on:click="selectIdx(10)" v-bind:class="{ active: idx === 10 }"></wwObject>
+                    <div v-if="section.data.block[10]" class="logo-block" v-on:click="selectIdx(10)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[10].logo" v-bind:class="{ active: idx === 10 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[14]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[14].logo" v-on:click="selectIdx(14)" v-bind:class="{ active: idx === 14 }"></wwObject>
+                    <div v-if="section.data.block[14]" class="logo-block" v-on:click="selectIdx(14)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[14].logo" v-bind:class="{ active: idx === 14 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[16]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[16].logo" v-on:click="selectIdx(16)" v-bind:class="{ active: idx === 16 }"></wwObject>
+                    <div v-if="section.data.block[16]" class="logo-block" v-on:click="selectIdx(16)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[16].logo" v-bind:class="{ active: idx === 16 }"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="logo-container medium">
                 <div>
-                    <div v-if="section.data.block[2]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[2].logo" v-on:click="selectIdx(2)" v-bind:class="{ active: idx === 2 }"></wwObject>
+                    <div v-if="section.data.block[2]" class="logo-block" v-on:click="selectIdx(2)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[2].logo" v-bind:class="{ active: idx === 2 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[8]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[8].logo" v-on:click="selectIdx(8)" v-bind:class="{ active: idx === 8 }"></wwObject>
+                    <div v-if="section.data.block[8]" class="logo-block" v-on:click="selectIdx(8)" >
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[8].logo" v-bind:class="{ active: idx === 8 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[12]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[12].logo" v-on:click="selectIdx(12)" v-bind:class="{ active: idx === 12 }"></wwObject>
+                    <div v-if="section.data.block[12]" class="logo-block" v-on:click="selectIdx(12)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[12].logo" v-bind:class="{ active: idx === 12 }"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="logo-container large">
                 <div>
-                    <div v-if="section.data.block[0]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[0].logo" v-on:click="selectIdx(0)" v-bind:class="{ active: idx === 0 }"></wwObject>
+                    <div v-if="section.data.block[0]" class="logo-block" v-on:click="selectIdx(0)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[0].logo" v-bind:class="{ active: idx === 0 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[6]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[6].logo" v-on:click="selectIdx(6)" v-bind:class="{ active: idx === 6 }"></wwObject>
+                    <div v-if="section.data.block[6]" class="logo-block" v-on:click="selectIdx(6)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[6].logo" v-bind:class="{ active: idx === 6 }"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="container-block">
+                <div class="card anim-ease-in-out opacity">
+                    <wwObject class="background" v-bind:ww-object="section.data.block[idx].background" ww-category="background"></wwObject>
+                    <wwObject class="text" v-bind:ww-object="section.data.block[idx].quote"></wwObject>
+                    <div class="img-corner">
+                        <wwObject class="block-img" v-bind:ww-object="section.data.block[idx].secondLogo"></wwObject>
+                    </div>
+                </div>
                 <div>
-                    <div class="card anim-ease-in-out opacity">
-                        <wwObject class="background" v-bind:ww-object="section.data.block[idx].background" ww-category="background"></wwObject>
-                        <wwObject class="text" v-bind:ww-object="section.data.block[idx].quote"></wwObject>
-                        <div class="img-corner">
-                            <wwObject class="block-img" v-bind:ww-object="section.data.block[idx].secondLogo"></wwObject>
+                    <wwObject v-bind:ww-object="section.data.margin"></wwObject>
+                </div>
+                <div>
+                    <div class="al-container">
+                        <div v-on:click="decrIdx()" class="anim-ease-in-out opacity moveRight cursor-pointer">
+                            <wwObject v-bind:ww-object="section.data.btnRight"></wwObject>
                         </div>
-                    </div>
-                    <div>
-                        <wwObject v-bind:ww-object="section.data.margin"></wwObject>
-                    </div>
-                    <div>
-                        <div class="al-container">
-                            <wwObject v-bind:ww-object="section.data.btnRight" class="anim-ease-in-out opacity moveRight cursor-pointer" v-on:click="decrIdx()"></wwObject>
-                            <div class="al-content">
-                                <wwObject v-bind:ww-object="section.data.block[idx].portrait" class="block-img al-portrait anim-ease-in-out opacity moveRight"></wwObject>
-                                <div class="al-text anim-ease-in-out opacity moveRight">
-                                    <wwObject v-bind:ww-object="section.data.block[idx].name" class="text"></wwObject>
-                                    <wwObject v-bind:ww-object="section.data.block[idx].description" class="text"></wwObject>
-                                </div>
-                                <div class="al-btn anim-ease-in-out opacity moveLeft">
-                                    <wwObject v-bind:ww-object="section.data.block[idx].btn"></wwObject>
-                                </div>
+                        <div class="al-content">
+                            <wwObject v-bind:ww-object="section.data.block[idx].portrait" class="block-img al-portrait anim-ease-in-out opacity moveRight"></wwObject>
+                            <div class="al-text anim-ease-in-out opacity moveRight">
+                                <wwObject v-bind:ww-object="section.data.block[idx].name" class="text"></wwObject>
+                                <wwObject v-bind:ww-object="section.data.block[idx].description" class="text"></wwObject>
                             </div>
-                            <wwObject v-bind:ww-object="section.data.btnLeft" class="anim-ease-in-out opacity moveLeft cursor-pointer" v-on:click="incrIdx()"></wwObject>
+                            <div class="al-btn anim-ease-in-out opacity moveLeft">
+                                <wwObject v-bind:ww-object="section.data.block[idx].btn"></wwObject>
+                            </div>
                         </div>
-                        <div class="al-btn2 anim-ease-in-out opacity">
-                            <wwObject v-bind:ww-object="section.data.block[idx].btn"></wwObject>
+                        <div v-on:click="incrIdx()" class="anim-ease-in-out opacity moveLeft cursor-pointer">
+                            <wwObject v-bind:ww-object="section.data.btnLeft"></wwObject>
                         </div>
+                    </div>
+                    <div class="al-btn2 anim-ease-in-out opacity">
+                        <wwObject v-bind:ww-object="section.data.block[idx].btn"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="logo-container large">
                 <div>
-                    <div v-if="section.data.block[1]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[1].logo" v-on:click="selectIdx(1)" v-bind:class="{ active: idx === 1 }"></wwObject>
+                    <div v-if="section.data.block[1]" class="logo-block" v-on:click="selectIdx(1)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[1].logo" v-bind:class="{ active: idx === 1 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[7]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[7].logo" v-on:click="selectIdx(7)" v-bind:class="{ active: idx === 7 }"></wwObject>
+                    <div v-if="section.data.block[7]" class="logo-block" v-on:click="selectIdx(7)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[7].logo" v-bind:class="{ active: idx === 7 }"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="logo-container medium">
                 <div>
-                    <div v-if="section.data.block[3]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[3].logo" v-on:click="selectIdx(3)" v-bind:class="{ active: idx === 3 }"></wwObject>
+                    <div v-if="section.data.block[3]" class="logo-block"  v-on:click="selectIdx(3)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[3].logo" v-bind:class="{ active: idx === 3 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[9]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[9].logo" v-on:click="selectIdx(9)" v-bind:class="{ active: idx === 9 }"></wwObject>
+                    <div v-if="section.data.block[9]" class="logo-block" v-on:click="selectIdx(9)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[9].logo" v-bind:class="{ active: idx === 9 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[13]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[13].logo" v-on:click="selectIdx(13)" v-bind:class="{ active: idx === 13 }"></wwObject>
+                    <div v-if="section.data.block[13]" class="logo-block" v-on:click="selectIdx(13)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[13].logo" v-bind:class="{ active: idx === 13 }"></wwObject>
                     </div>
                 </div>
             </div>
             <div class="logo-container small">
                 <div>
-                    <div v-if="section.data.block[5]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[5].logo" v-on:click="selectIdx(5)" v-bind:class="{ active: idx === 5 }"></wwObject>
+                    <div v-if="section.data.block[5]" class="logo-block" v-on:click="selectIdx(5)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[5].logo" v-bind:class="{ active: idx === 5 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[11]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[11].logo" v-on:click="selectIdx(11)" v-bind:class="{ active: idx === 11 }"></wwObject>
+                    <div v-if="section.data.block[11]" class="logo-block" v-on:click="selectIdx(11)" >
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[11].logo" v-bind:class="{ active: idx === 11 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[15]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[15].logo" v-on:click="selectIdx(15)" v-bind:class="{ active: idx === 15 }"></wwObject>
+                    <div v-if="section.data.block[15]" class="logo-block" v-on:click="selectIdx(15)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[15].logo" v-bind:class="{ active: idx === 15 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[17]" class="logo-block">
-                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[17].logo" v-on:click="selectIdx(17)" v-bind:class="{ active: idx === 17 }"></wwObject>
+                    <div v-if="section.data.block[17]" class="logo-block" v-on:click="selectIdx(17)">
+                        <wwObject class="block-img logo" v-bind:ww-object="section.data.block[17].logo" v-bind:class="{ active: idx === 17 }"></wwObject>
                     </div>
                 </div>
             </div>
-            <div class="full-width">
-                <div ww-object="data.marginBottom"></div>
-                <wwObject v-bind:ww-object="section.data.marginBottom"></wwObject>
-            </div>
+        </div>
+        <div class="full-width">
+            <wwObject v-bind:ww-object="section.data.marginBottom"></wwObject>
         </div>
     </div>
 </template>
@@ -152,9 +153,9 @@ export default {
         },
         activeAnim: async function () {
             let sectionElement = this.$el
-            const opacity = sectionElement.getElementsByClassName("opacity")
-            const moveLeft = sectionElement.getElementsByClassName("moveLeft")
-            const moveRight = sectionElement.getElementsByClassName("moveRight")
+            const opacity = sectionElement.getElementsByClassName('opacity')
+            const moveLeft = sectionElement.getElementsByClassName('moveLeft')
+            const moveRight = sectionElement.getElementsByClassName('moveRight')
 
             for (let elem of opacity) {
                 elem.style.opacity = 1
@@ -168,9 +169,9 @@ export default {
         },
         removeAnim: async function () {
             let sectionElement = this.$el
-            const opacity = sectionElement.getElementsByClassName("opacity")
-            const moveLeft = sectionElement.getElementsByClassName("moveLeft")
-            const moveRight = sectionElement.getElementsByClassName("moveRight")
+            const opacity = sectionElement.getElementsByClassName('opacity')
+            const moveLeft = sectionElement.getElementsByClassName('moveLeft')
+            const moveRight = sectionElement.getElementsByClassName('moveRight')
 
             for (let elem of opacity) {
                 elem.style.opacity = 0
@@ -184,9 +185,10 @@ export default {
             await timeout(500)
         },
         setTimer: function () {
+            const self = this
             this.interval = setInterval(function () {
                 // if (!$scope.editingSection)
-                //     $scope.changeData(($scope.idx + 1) % this.section.data.block.length)
+                    self.changeData((self.idx + 1) % self.section.data.block.length)
             }, 8000);
         },
         changeData: async function (idx) {
@@ -196,19 +198,18 @@ export default {
         },
         incrIdx: async function () {
             await this.changeData((this.idx + 1) % this.section.data.block.length)
-            clearInterval(this.interval);
+            clearInterval(this.interval)
             this.setTimer()
         },
         decrIdx: async function () {
             var idx = this.idx - 1
             if (idx < 0) idx = this.section.data.block.length - 1
             await this.changeData(idx)
-            clearInterval(interval);
+            clearInterval(interval)
             this.setTimer()
         },
         selectIdx: async function (idx) {
-            console.log('selectIdx')
-            $interval.cancel(this.interval);
+            clearInterval(this.interval)
             await this.changeData(idx)
             this.setTimer()
         },
@@ -227,13 +228,10 @@ export default {
             this.decrIdx()
         }
     },
-    created: function () {
-    },
     mounted: function () {
         this.idx = 0
         this.$nextTick(() => {
             this.init()
-            this.incrIdx()
         })
     }
 };
@@ -318,8 +316,8 @@ export default {
   float: left;
   box-sizing: border-box;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 9px;
+  padding-left: 9px;
 }
 
 .logoandcard_A .cursor-pointer {
@@ -342,12 +340,10 @@ export default {
   transition: 1s;
   cursor: pointer;
   opacity: 0.5;
-  padding-right: 10px;
-  padding-left: 10px;
   margin-bottom: 10px;
 }
 
-.logoandcard_A .logo-container .active,
+.logoandcard_A .logo-container .logo.active,
 .logoandcard_A .logo:hover {
   transform: translateY(-5px);
   transition: 1s;
@@ -359,13 +355,13 @@ export default {
   display: block;
   float: left;
   min-height: 1px;
-  padding-right: 30px;
-  padding-left: 30px;
-  width: 45%;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 47%;
 }
 
 .logoandcard_A .leftMargin {
-  width: 2%;
+  width: 1%;
   padding: unset;
   float: left;
 }
@@ -375,7 +371,10 @@ export default {
 }
 
 .logoandcard_A .card {
+  position: relative;
   height: 350px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .logoandcard_A .al-container {
@@ -461,5 +460,6 @@ export default {
   -ms-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  position: relative;
 }
 </style>
