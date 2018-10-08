@@ -28,7 +28,7 @@
                     <div v-if="section.data.block[2]" class="logo-block" v-on:click="selectIdx(2)">
                         <wwObject class="block-img logo" v-bind:ww-object="section.data.block[2].logo" v-bind:class="{ active: idx === 2 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[8]" class="logo-block" v-on:click="selectIdx(8)" >
+                    <div v-if="section.data.block[8]" class="logo-block" v-on:click="selectIdx(8)">
                         <wwObject class="block-img logo" v-bind:ww-object="section.data.block[8].logo" v-bind:class="{ active: idx === 8 }"></wwObject>
                     </div>
                     <div v-if="section.data.block[12]" class="logo-block" v-on:click="selectIdx(12)">
@@ -93,7 +93,7 @@
             </div>
             <div class="logo-container medium">
                 <div>
-                    <div v-if="section.data.block[3]" class="logo-block"  v-on:click="selectIdx(3)">
+                    <div v-if="section.data.block[3]" class="logo-block" v-on:click="selectIdx(3)">
                         <wwObject class="block-img logo" v-bind:ww-object="section.data.block[3].logo" v-bind:class="{ active: idx === 3 }"></wwObject>
                     </div>
                     <div v-if="section.data.block[9]" class="logo-block" v-on:click="selectIdx(9)">
@@ -109,7 +109,7 @@
                     <div v-if="section.data.block[5]" class="logo-block" v-on:click="selectIdx(5)">
                         <wwObject class="block-img logo" v-bind:ww-object="section.data.block[5].logo" v-bind:class="{ active: idx === 5 }"></wwObject>
                     </div>
-                    <div v-if="section.data.block[11]" class="logo-block" v-on:click="selectIdx(11)" >
+                    <div v-if="section.data.block[11]" class="logo-block" v-on:click="selectIdx(11)">
                         <wwObject class="block-img logo" v-bind:ww-object="section.data.block[11].logo" v-bind:class="{ active: idx === 11 }"></wwObject>
                     </div>
                     <div v-if="section.data.block[15]" class="logo-block" v-on:click="selectIdx(15)">
@@ -188,7 +188,7 @@ export default {
             const self = this
             this.interval = setInterval(function () {
                 // if (!$scope.editingSection)
-                    self.changeData((self.idx + 1) % self.section.data.block.length)
+                self.changeData((self.idx + 1) % self.section.data.block.length)
             }, 8000);
         },
         changeData: async function (idx) {
@@ -252,6 +252,8 @@ export default {
 
 .logoandcard_A .content-container {
   display: flex;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .logoandcard_A .f-container {
