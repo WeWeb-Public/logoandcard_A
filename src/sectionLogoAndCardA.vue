@@ -134,7 +134,7 @@ function timeout(ms) {
 export default {
     name: "logoandcard_A",
     props: {
-        section: Object
+        sectionRef: Object
     },
     data() {
         return {
@@ -142,6 +142,12 @@ export default {
             inteval: null,
             idx: 0
         };
+    },
+    computed: {
+        section() {
+            //return this.sectionRef.wwGet();
+            return this.$store.state.sections[this.sectionRef.id];
+        }
     },
     methods: {
         init: function () {
