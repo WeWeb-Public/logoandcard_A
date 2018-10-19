@@ -1,5 +1,10 @@
 <template>
     <div class="logoandcard_A">
+
+        <!-- wwManager:start -->
+        <wwSectionEditMenu v-bind:section="section"></wwSectionEditMenu>
+        <!-- wwManager:end -->
+
         <wwObject class="background" v-bind:ww-object="section.data.background" v-bind:section="section" ww-category="background"></wwObject>
         <div class="title">
             <wwObject v-bind:ww-object="section.data.title" v-bind:section="section"></wwObject>
