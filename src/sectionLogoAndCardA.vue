@@ -152,7 +152,7 @@ export default {
     },
     methods: {
         init: function () {
-            console.log(this.section.data.block)
+            //console.log(this.section.data.block)
             this.sectionId = this.section.id
             this.section.data.block = this.section.data.block || []
 
