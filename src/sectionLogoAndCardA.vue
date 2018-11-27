@@ -8,7 +8,7 @@
             <wwObject v-bind:ww-object="section.data.title"></wwObject>
         </div>
 
-        <div class="content-container">
+        <div class="content-container" v-if="section.data.columns">
             <div class="leftMargin"></div>
             <div class="logo-container small">
                 <wwLayoutColumn tag="div" ww-default="ww-image" :ww-list="section.data.columns[4]" @ww-add="add(section.data.columns[4], $event)" @ww-remove="remove(section.data.columns[4], $event)">
