@@ -160,6 +160,10 @@ export default {
                 this.sectionCtrl.update(this.section);
             }
 
+            if (this.section.data.columns[0] && this.section.data.columns[0][0]) {
+                this.activeBlock = this.section.data.columns[0][0];
+            }
+
         },
         migrateData() {
 
@@ -179,12 +183,6 @@ export default {
                     this.section.data.columns[colIndex].push(this.section.data.block[index]);
                 }
             }
-
-            if (this.section.data.columns[0] && this.section.data.columns[0][0]) {
-                this.activeBlock = this.section.data.columns[0][0];
-            }
-
-            console.log(this.activeBlock)
 
             delete this.section.data.block;
             return true;
