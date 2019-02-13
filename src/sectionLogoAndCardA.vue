@@ -96,7 +96,7 @@
 
 <script>
 export default {
-    name: "logoandcard_A",
+    name: "__COMPONENT_NAME__",
     props: {
         sectionCtrl: Object
     },
