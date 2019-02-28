@@ -1,11 +1,12 @@
 module.exports = [
     {
-        name: 'my_section',
+        name: 'weweb_user',
+        category: "Features",
         storeName: {
-            en_GB: "My first section"
+            en_GB: "They use WeWeb"
         },
         storeDesc: {
-            en_GB: "Template for my first section"
+            en_GB: "Logo and card for WeWeb"
         }
     }
 ]

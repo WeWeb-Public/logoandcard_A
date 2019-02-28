@@ -40,9 +40,6 @@
                     </div>
                 </div>
                 <div>
-                    <wwObject v-bind:ww-object="section.data.margin"></wwObject>
-                </div>
-                <div>
                     <div class="al-container">
                         <div v-on:click="previous()" class="anim-ease-in-out opacity moveRight cursor-pointer">
                             <wwObject v-bind:ww-object="section.data.btnRight"></wwObject>
@@ -88,9 +85,6 @@
                 </wwLayoutColumn>
             </div>
         </div>
-        <div class="full-width">
-            <wwObject v-bind:ww-object="section.data.marginBottom"></wwObject>
-        </div>
     </div>
 </template>
 
@@ -131,13 +125,23 @@ export default {
                 }
             }
             return 0;
+        },
+        // wwManager:start
+        editMode() {
+            return this.sectionCtrl.getEditMode() == 'CONTENT'
         }
+        // wwManager:end
     },
     methods: {
         initData() {
-
             //Init objects
             let needUpdate = this.migrateData();
+            if (!this.section.data.columns) {
+                this.section.data.columns = [
+                    [this.getNewBlock()], [], [], [], [], []
+                ]
+                needUpdate = true;
+            }
             if (!this.section.data.background) {
                 this.section.data.background = wwLib.wwObject.getDefault({ type: 'ww-color', data: { color: 'white' } });
                 needUpdate = true;
@@ -155,7 +159,6 @@ export default {
                 needUpdate = true;
             }
 
-
             if (needUpdate) {
                 this.sectionCtrl.update(this.section);
             }
@@ -166,7 +169,6 @@ export default {
 
         },
         migrateData() {
-
             if (!this.section.data.block) {
                 return false;
             }
@@ -188,7 +190,6 @@ export default {
             return true;
         },
         init: function () {
-            //console.log(this.section.data.block)
             this.sectionId = this.section.id
 
             this.setTimer()
@@ -232,8 +233,9 @@ export default {
         setTimer: function () {
             const self = this
             this.interval = setInterval(function () {
-                // if (!$scope.editingSection)
-                self.changeData(self.getNextBlock(self.activeColumn, self.activeRow))
+                if (!self.editMode) {
+                    self.changeData(self.getNextBlock(self.activeColumn, self.activeRow))
+                }
             }, 8000);
         },
         changeData: async function (block) {
@@ -286,7 +288,6 @@ export default {
             return this.section.data.columns[c][r];
         },
         next: async function () {
-            console.log(this.activeColumn, this.activeRow)
             await this.changeData(this.getNextBlock(this.activeColumn, this.activeRow))
             clearInterval(this.interval)
             this.setTimer()
@@ -311,11 +312,10 @@ export default {
                 portrait: wwLib.wwObject.getDefault({ type: 'ww-image' }),
                 name: wwLib.wwObject.getDefault({ type: 'ww-text' }),
                 description: wwLib.wwObject.getDefault({ type: 'ww-text' }),
-                btn: wwLib.wwObject.getDefault({ type: 'ww-button' }),
+                btn: wwLib.wwObject.getDefault({ type: 'ww-button' })
             }
         },
         add(column, options) {
-
             column.splice(options.index, 0, this.getNewBlock());
             this.sectionCtrl.update(this.section);
         },
@@ -367,7 +367,7 @@ export default {
     display: flex;
     width: 100%;
     overflow-x: hidden;
-    padding-top: 15px;
+    padding: 15px 0;
 }
 
 .logoandcard_A .f-container {
@@ -491,6 +491,7 @@ export default {
     height: 350px;
     display: inline-block;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 .logoandcard_A .al-container {
@@ -514,12 +515,13 @@ export default {
 }
 
 .logoandcard_A .al-text {
-    width: 60%;
+    width: 50%;
     position: relative;
 }
 
 .logoandcard_A .al-btn {
     position: relative;
+    width: 20%;
 }
 
 .logoandcard_A .al-btn2 {
